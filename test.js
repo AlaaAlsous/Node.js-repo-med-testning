@@ -1,3 +1,4 @@
+import { test, expect } from "@jest/globals";
 import { quack } from "./index.js";
 
 test("returns the correct text for Donald", () => {
