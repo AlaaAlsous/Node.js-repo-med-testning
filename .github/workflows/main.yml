@@ -1,4 +1,4 @@
-name: Node.js Tests
+name: Node.js Tests and Publish
 
 on:
   push:
@@ -27,3 +27,29 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  publish:
+    name: Package and publish application
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create ZIP package
+        run: |
+          mkdir -p dist
+          zip -j dist/nodejs-application.zip \
+            index.js \
+            package.json \
+            package-lock.json
+
+      - name: Upload application artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nodejs-application
+          path: dist/nodejs-application.zip
+          if-no-files-found: error
+          retention-days: 14
