@@ -1,0 +1,24 @@
+{
+  "name": "node.js-repo-med-testning",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlaaAlsous/Node.js-repo-med-testning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlaaAlsous/Node.js-repo-med-testning/issues"
+  },
+  "homepage": "https://github.com/AlaaAlsous/Node.js-repo-med-testning#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
