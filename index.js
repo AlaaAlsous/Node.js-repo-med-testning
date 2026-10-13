@@ -1,5 +1,5 @@
 export function quack(name) {
-  return `${name} quacks!`;
+  return `${name} quack!`;
 }
 
 console.log(quack("Donald"));
